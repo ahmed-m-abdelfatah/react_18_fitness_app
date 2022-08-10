@@ -83,8 +83,6 @@ body {
 }
 
 .exercise-card {
-  width: 400px;
-  height: 445px;
   background: #fff;
   border-top: 4px solid #FF2625;
   border-bottom-left-radius: 20px;
@@ -92,18 +90,16 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding-bottom: 10px;
-  transform: scale(1, 1);
-  transition: 0.3s all ease-in-out;
+  padding: 10px;
 }
 
 .exercise-card img {
   height: 326px;
+  width: 326px;
 }
 
 .bodyPart-card {
   user-select: none;
-  /* transform: scale(1, 1); */
 }
 
 .search-btn:hover {
@@ -141,19 +137,9 @@ body {
     display: none;
   }
 
-  .exercise-card {
-    width: 320px;
-  }
-
   .exercise-video {
     width: 320px;
     height: 300px;
   }
 
-}
-
-@media screen and (max-width:400px) {
-  .exercise-card {
-    width: 280px;
-  }
 }

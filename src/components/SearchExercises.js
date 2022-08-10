@@ -14,7 +14,6 @@ const SearchExercises = ({ exercisesRef, bodyPart, setBodyPart, setExercises, se
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      console.log('~ bodyParts.length', bodyParts.length);
       if (bodyParts.length) return;
 
       const {

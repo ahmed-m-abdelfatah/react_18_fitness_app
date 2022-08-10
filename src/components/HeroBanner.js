@@ -1,9 +1,13 @@
 import React from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 
 const HeroBanner = () => {
   return (
-    <Box sx={{ mt: { lg: '13.25rem', xs: '4.375rem' }, ml: { sm: '3.125rem' } }} position='relative' p='1.25rem'>
+    <Stack
+      sx={{ mt: { lg: '5rem', xs: '3rem' }, ml: { sm: '3.125rem' } }}
+      textAlign='center'
+      position='relative'
+      p='1.25rem'>
       <Typography variant='h1' color='#FF2625' fontWeight='600' fontSize='1.625rem'>
         Fitness Exercises
       </Typography>
@@ -18,7 +22,7 @@ const HeroBanner = () => {
         <a
           href='#exercises'
           style={{
-            marginTop: '2.8125rem',
+            margin: '2.8125rem auto 0',
             textDecoration: 'none',
             width: '12.5rem',
             textAlign: 'center',
@@ -38,7 +42,7 @@ const HeroBanner = () => {
         sx={{ opacity: '0.1', display: { lg: 'block', xs: 'none' }, fontSize: '12.5rem' }}>
         Exercise
       </Typography>
-    </Box>
+    </Stack>
   );
 };
 

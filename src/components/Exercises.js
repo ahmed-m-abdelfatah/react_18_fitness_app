@@ -62,7 +62,7 @@ const Exercises = ({ bodyPart, exercises, setExercises, currentPage, setCurrentP
           <span style={{ color: 'gray', fontSize: '1.5rem' }}>current page: {currentPage}</span>
         </Typography>
       )}
-      <Stack direction='row' sx={{ gap: { lg: '6.875rem', xs: '3.125rem' } }} flexWrap='wrap' justifyContent='center'>
+      <Stack direction='row' sx={{ gap: '3.125rem' }} flexWrap='wrap' justifyContent='center'>
         {currentExercises.map((exercise, index) => (
           <ExerciseCard key={index} exercise={exercise} currentPage={currentPage} />
         ))}
