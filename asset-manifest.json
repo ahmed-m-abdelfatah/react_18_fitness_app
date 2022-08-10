@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/react_18_fitness_app/static/css/main.2ca56a20.css",
-    "main.js": "/react_18_fitness_app/static/js/main.42dbc79d.js",
-    "static/media/banner.png": "/react_18_fitness_app/static/media/banner.5209b5e92a864ca0c615.png",
+    "main.css": "/react_18_fitness_app/static/css/main.9312db36.css",
+    "main.js": "/react_18_fitness_app/static/js/main.f24e5cde.js",
     "static/media/gym.png": "/react_18_fitness_app/static/media/gym.6e701417c428e2fbc267.png",
     "index.html": "/react_18_fitness_app/index.html",
-    "main.2ca56a20.css.map": "/react_18_fitness_app/static/css/main.2ca56a20.css.map",
-    "main.42dbc79d.js.map": "/react_18_fitness_app/static/js/main.42dbc79d.js.map"
+    "main.9312db36.css.map": "/react_18_fitness_app/static/css/main.9312db36.css.map",
+    "main.f24e5cde.js.map": "/react_18_fitness_app/static/js/main.f24e5cde.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ca56a20.css",
-    "static/js/main.42dbc79d.js"
+    "static/css/main.9312db36.css",
+    "static/js/main.f24e5cde.js"
   ]
 }
