@@ -32,7 +32,7 @@ const HorizontalScrollbar = ({ exercisesRef, data, bodyPart, setBodyPart, setCur
   return (
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map(item => (
-        <Box key={item.id || item} itemId={item.id || item} title={item.id || item} m='0 2.5rem'>
+        <Box key={item.id || item} itemID={item.id || item} title={item.id || item} m='0 2.5rem'>
           {isBodyPart ? (
             <BodyPart
               exercisesRef={exercisesRef}

@@ -28,12 +28,15 @@ const Exercises = ({ bodyPart, exercises, setExercises, currentPage, setCurrentP
       let res;
 
       if (bodyPart === 'all') {
-        res = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+        res = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions, 1, true);
       } else {
         ExerciseData = await fetchData(
           `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
           exerciseOptions,
+          1,
+          true,
         );
+        console.log('~ ExerciseData', ExerciseData);
       }
 
       if (res.ok) {

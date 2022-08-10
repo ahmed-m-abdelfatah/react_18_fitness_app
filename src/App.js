@@ -40,4 +40,9 @@ Additional tasks:
 - [X] add 404 page
 - [X] exceeded limit page
 - [X] save data to local storage because 500 req / month
+After feedback edits:
+- [X] edit app name in pwa
+- [X] remove unneeded imgs to make web app faster
+- [X] save all body parts tp local storage
+- [X] make font smaller
  */

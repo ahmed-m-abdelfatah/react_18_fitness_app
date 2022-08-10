@@ -1,16 +1,16 @@
 html{
-  font-size: 16px;
+  font-size: 14px;
   scrollbar-color: transparent transparent !important;
   scroll-behavior: smooth;
 }
 
-@media screen and (max-width: 992px) {
+@media (max-width: 992px) {
   html{
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   html{
     font-size: 11px;
   }

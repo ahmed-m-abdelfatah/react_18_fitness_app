@@ -16,14 +16,15 @@ export const youtubeOptions = {
   },
 };
 
-export const fetchData = async (url, options, keyNumber = 1) => {
+export const fetchData = async (url, options, keyNumber = 1, saveCacheToLocalStorage = false) => {
   let key;
-  // console.log('=================================================================');
-  // console.log('~ fetchData', { keyNumber, url, key, cacheLength: Object.keys(cache).length, cache });
+  let urlKey = url.split('/').pop();
+  console.log('~ urlKey', urlKey);
+  console.log('=================================================================');
+  console.log('~ fetchData', { keyNumber, url, urlKey, key, cacheLength: Object.keys(cache).length, cache });
 
-  if (cache[url]) {
-    // console.log('~ fetchData returned from cache');
-    return cache[url];
+  if (cache[urlKey]) {
+    return cache[urlKey];
   }
 
   switch (keyNumber) {
@@ -46,28 +47,18 @@ export const fetchData = async (url, options, keyNumber = 1) => {
   // use another account because of 500 req / month
   if (!response.ok && response.status === 429 && keyNumber === 1) {
     keyNumber = 2;
-    return fetchData(url, options, keyNumber);
+    return fetchData(url, options, keyNumber, saveCacheToLocalStorage);
   }
 
   const data = await response.json();
 
   if (response.ok && data) {
-    cache[url] = data;
+    cache[urlKey] = data;
 
-    // save cache to localStorage because of 500 req / month
-    if (cache['https://exercisedb.p.rapidapi.com/exercises']) {
-      localStorage.setItem('exercises', JSON.stringify(cache['https://exercisedb.p.rapidapi.com/exercises']));
+    if (cache[urlKey] && saveCacheToLocalStorage) {
+      localStorage.setItem(urlKey, JSON.stringify(cache[urlKey]));
     }
   }
 
-  // console.log('~ fetchData return', {
-  //   data,
-  //   ok: response.ok,
-  //   status: response.status,
-  //   keyNumber,
-  //   url,
-  // });
-
-  // console.log('~ fetchData returned from API');
   return { data, ok: response.ok, status: response.status };
 };
