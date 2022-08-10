@@ -20,19 +20,13 @@ const Home = () => {
 
   useEffect(() => {
     localStorage.setItem('bodyPart', bodyPart);
-
-    return () => {
-      localStorage.setItem('bodyPart', bodyPart);
-    };
-  }, [bodyPart]);
-
-  useEffect(() => {
     localStorage.setItem('currentPage', currentPage);
 
     return () => {
+      localStorage.setItem('bodyPart', bodyPart);
       localStorage.setItem('currentPage', currentPage);
     };
-  }, [currentPage]);
+  }, [bodyPart, currentPage]);
 
   return (
     <Box>

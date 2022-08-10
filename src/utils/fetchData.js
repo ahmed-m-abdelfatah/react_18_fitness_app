@@ -1,3 +1,5 @@
+import { getLocalStorage } from './getLocalStorage.js';
+
 const cache = {};
 
 export const exerciseOptions = {
@@ -19,12 +21,17 @@ export const youtubeOptions = {
 export const fetchData = async (url, options, keyNumber = 1, saveCacheToLocalStorage = false) => {
   let key;
   let urlKey = url.split('/').pop();
-  console.log('~ urlKey', urlKey);
-  console.log('=================================================================');
-  console.log('~ fetchData', { keyNumber, url, urlKey, key, cacheLength: Object.keys(cache).length, cache });
+  // console.log('=================================================================');
+  // console.log('~ fetchData', { keyNumber, url, urlKey, key, cacheLength: Object.keys(cache).length, cache });
 
   if (cache[urlKey]) {
-    return cache[urlKey];
+    let data = cache[urlKey];
+    return { data, ok: true, status: 200 };
+  }
+
+  let dataFromLocalStorage = getLocalStorage(urlKey);
+  if (dataFromLocalStorage) {
+    return { data: dataFromLocalStorage, ok: true, status: 200 };
   }
 
   switch (keyNumber) {

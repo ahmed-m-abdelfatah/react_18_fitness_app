@@ -21,22 +21,18 @@ const Exercises = ({ bodyPart, exercises, setExercises, currentPage, setCurrentP
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      console.log('~ exercises.length', exercises.length);
-      if (exercises.length) return;
-
       let ExerciseData = [];
       let res;
 
       if (bodyPart === 'all') {
         res = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions, 1, true);
       } else {
-        ExerciseData = await fetchData(
+        res = await fetchData(
           `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
           exerciseOptions,
           1,
           true,
         );
-        console.log('~ ExerciseData', ExerciseData);
       }
 
       if (res.ok) {
@@ -53,7 +49,7 @@ const Exercises = ({ bodyPart, exercises, setExercises, currentPage, setCurrentP
     };
 
     fetchExercisesData();
-  }, [bodyPart, setExercises]);
+  }, [bodyPart, setExercises, navigate]);
 
   return (
     <Box id='exercises' ref={ref} sx={{ mt: { lg: '6.875rem' } }} mt='3.125rem' p='1.25rem'>
