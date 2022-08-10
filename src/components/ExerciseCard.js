@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, Stack, Typography } from '@mui/material';
 import { convertHttpTHttps } from '../utils/convertHttpTHttps.js';
 
-const ExerciseCard = ({ exercise, currentPage }) => {
+const ExerciseCard = ({ exercise, currentPage, bodyPart }) => {
   const onLoad = e => {
     setTimeout(() => {
       e.target.style.visibility = 'visible';
@@ -18,7 +18,7 @@ const ExerciseCard = ({ exercise, currentPage }) => {
 
   useEffect(() => {
     imgRef.current.style.visibility = 'hidden';
-  }, [currentPage]);
+  }, [currentPage, bodyPart]);
 
   return (
     <Link className='exercise-card' to={`/exercise/${exercise.id}`}>
